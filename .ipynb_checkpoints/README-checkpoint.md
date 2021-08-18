@@ -44,6 +44,8 @@ The last two aforementioned issues with the tabular method regarding a limited a
   <img src="./Plots/rbf_regression.png" alt="fig1"/>
   <figcaption>Figure 1: True vs Predicted using 450 RBFs.</figcaption>
 </figure>
+<br>
+<br>
 
 Using this method, no learning takes place. State-Action values are acquired though a linear combination of RBF transformed state-action combination and a set of weights which were acquired though fitting a linear regression model based on the learning from the tabular method.
 
@@ -53,6 +55,8 @@ With a carefully chosen number of RBFs, this approach can outperform the tabular
   <img src="./Plots/tabular_rbf.png" alt="fig2"/>
   <figcaption>Figure 2: Steps till completion, Moving Average of 30.</figcaption>
 </figure>
+<br>
+<br>
 
 Here the RBF methods do not actually learn anything, their performance is consistent throughout the whole 5000 episodes. The RBF(450) model still slightly outperforms the tabular method.
 
@@ -79,10 +83,15 @@ Both online learning algorithms were run for 5000 episodes with steps till compl
   <img src="./Plots/sarsa_ql.png" alt="fig3"/>
   <figcaption>Figure 3: Steps till completion, Moving Average of 30.</figcaption>
 </figure>
+<br>
 
 ## Summary
 
 <figure>
   <img src="./Plots/loss_surfaces.png" alt="fig4"/>
-  <figcaption>Figure 4: State space loss surfaces for different learning methods.</figcaption>
+  <figcaption>Figure 4: State space value surfaces for different learning methods.</figcaption>
 </figure>
+<br>
+<br>
+
+The methods applied in this report approximate state values for every possible action. These approximations can be used to create state space quality surfaces. Some of these surfaces are displayed in Figure 4. Interestingly, all of the shapes are rather distinct, yet have some key common features. For the Tabular method, there is a valley in the center with heights around 0.5 position and high velocity. Some of the state values around the borders of the surface are missing - the agent never explored there. Offline RBF approximation looks very similar, yet it has values assigned for the unvisited states. The Q-Learning quality surface is completely different though. It is very smooth, with heights around high velocity.
