@@ -1,0 +1,4 @@
+{"obj": {"type": "LogFloats", "path": ["monitoring", "cpu"], "values": [{"value": 38.3, "step": null, "ts": 1625496305.53801}]}, "version": 1}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 5.783454895019531, "step": null, "ts": 1625496305.53801}]}, "version": 2}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "stdout"], "values": [{"value": "b''", "step": null, "ts": 1625496305.5488856}]}, "version": 3}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "stdout"], "values": [{"value": "b'https://app.neptune.ai/vinas94/MountainCarProblem/e/MCP-1\\n'", "step": null, "ts": 1625496305.5496607}]}, "version": 4}

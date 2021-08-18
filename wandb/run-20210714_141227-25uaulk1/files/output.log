@@ -1,0 +1,4 @@
+<ipython-input-2-f1d0ac96f42f>:24: UserWarning: Z contains NaN values. This may result in rendering artifacts.
+  ax.plot_surface(x, y, z, rstride=1, cstride=1, cmap='viridis', vmin=np.nanmin(z), vmax=np.nanmax(z), linewidth=0.08, antialiased=True)
+<ipython-input-2-f1d0ac96f42f>:24: UserWarning: Z contains NaN values. This may result in rendering artifacts.
+  ax.plot_surface(x, y, z, rstride=1, cstride=1, cmap='viridis', vmin=np.nanmin(z), vmax=np.nanmax(z), linewidth=0.08, antialiased=True)

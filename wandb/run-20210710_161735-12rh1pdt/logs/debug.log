@@ -1,0 +1,195 @@
+2021-07-10 16:17:35,539 INFO    MainThread:80839 [wandb_setup.py:_flush():69] setting env: {}
+2021-07-10 16:17:35,540 INFO    MainThread:80839 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-07-10 16:17:35,540 INFO    MainThread:80839 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-07-10 16:17:35,540 INFO    MainThread:80839 [wandb_init.py:_log_setup():337] Logging user logs to /home/vinas/Documents/GitHub/Public/MountainCarProblem/wandb/run-20210710_161735-12rh1pdt/logs/debug.log
+2021-07-10 16:17:35,540 INFO    MainThread:80839 [wandb_init.py:_log_setup():338] Logging internal logs to /home/vinas/Documents/GitHub/Public/MountainCarProblem/wandb/run-20210710_161735-12rh1pdt/logs/debug-internal.log
+2021-07-10 16:17:35,542 INFO    MainThread:80839 [wandb_init.py:_jupyter_setup():288] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7fbe5ad72eb0>
+2021-07-10 16:17:35,542 INFO    MainThread:80839 [wandb_init.py:init():370] calling init triggers
+2021-07-10 16:17:35,543 INFO    MainThread:80839 [wandb_init.py:init():375] wandb.init called with sweep_config: {}
+config: {'n_states': 40, 'episodes': 5000, 'initial_lr': 1.0, 'min_lr': 0.005, 'gamma': 0.99, 'epsilon': 0.05, 'seed': 0}
+2021-07-10 16:17:35,543 INFO    MainThread:80839 [wandb_init.py:init():419] starting backend
+2021-07-10 16:17:35,543 INFO    MainThread:80839 [backend.py:_multiprocessing_setup():70] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2021-07-10 16:17:35,561 INFO    MainThread:80839 [backend.py:ensure_launched():135] starting backend process...
+2021-07-10 16:17:35,574 INFO    MainThread:80839 [backend.py:ensure_launched():139] started backend process with pid: 80918
+2021-07-10 16:17:35,576 INFO    MainThread:80839 [wandb_init.py:init():424] backend started and connected
+2021-07-10 16:17:35,656 INFO    MainThread:80839 [wandb_run.py:_label_probe_notebook():844] probe notebook
+2021-07-10 16:17:35,657 INFO    MainThread:80839 [wandb_run.py:_label_probe_notebook():851] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2021-07-10 16:17:35,657 INFO    MainThread:80839 [wandb_init.py:init():472] updated telemetry
+2021-07-10 16:17:35,657 INFO    MainThread:80839 [wandb_init.py:init():491] communicating current version
+2021-07-10 16:17:36,362 INFO    MainThread:80839 [wandb_init.py:init():496] got version response 
+2021-07-10 16:17:36,363 INFO    MainThread:80839 [wandb_init.py:init():504] communicating run to backend with 30 second timeout
+2021-07-10 16:17:36,612 INFO    MainThread:80839 [wandb_init.py:init():529] starting run threads in backend
+2021-07-10 16:17:37,797 INFO    MainThread:80839 [wandb_run.py:_console_start():1623] atexit reg
+2021-07-10 16:17:37,798 INFO    MainThread:80839 [wandb_run.py:_redirect():1497] redirect: SettingsConsole.WRAP
+2021-07-10 16:17:37,799 INFO    MainThread:80839 [wandb_run.py:_redirect():1534] Wrapping output streams.
+2021-07-10 16:17:37,799 INFO    MainThread:80839 [wandb_run.py:_redirect():1558] Redirects installed.
+2021-07-10 16:17:37,799 INFO    MainThread:80839 [wandb_init.py:init():554] run started, returning control to user process
+2021-07-10 16:17:37,800 INFO    MainThread:80839 [wandb_init.py:_pause_backend():250] pausing backend
+2021-07-10 16:17:37,801 INFO    MainThread:80839 [jupyter.py:save_ipynb():287] looking for notebook: Public/MountainCarProblem/1_offline_tabular.ipynb
+2021-07-10 16:17:37,807 INFO    MainThread:80839 [wandb_init.py:_resume_backend():259] resuming backend
+2021-07-10 16:17:37,812 INFO    MainThread:80839 [wandb_init.py:_pause_backend():250] pausing backend
+2021-07-10 16:17:37,812 INFO    MainThread:80839 [jupyter.py:save_ipynb():287] looking for notebook: Public/MountainCarProblem/1_offline_tabular.ipynb
+2021-07-10 16:17:37,818 INFO    MainThread:80839 [wandb_init.py:_resume_backend():259] resuming backend
+2021-07-10 16:17:37,830 INFO    MainThread:80839 [wandb_init.py:_pause_backend():250] pausing backend
+2021-07-10 16:17:37,831 INFO    MainThread:80839 [jupyter.py:save_ipynb():287] looking for notebook: Public/MountainCarProblem/1_offline_tabular.ipynb
+2021-07-10 16:17:37,839 INFO    MainThread:80839 [wandb_init.py:_resume_backend():259] resuming backend
+2021-07-10 16:20:33,577 INFO    MainThread:80839 [wandb_init.py:_pause_backend():250] pausing backend
+2021-07-10 16:20:33,577 INFO    MainThread:80839 [jupyter.py:save_ipynb():287] looking for notebook: Public/MountainCarProblem/1_offline_tabular.ipynb
+2021-07-10 16:20:33,582 INFO    MainThread:80839 [wandb_init.py:_resume_backend():259] resuming backend
+2021-07-10 16:20:33,595 INFO    MainThread:80839 [wandb_init.py:_pause_backend():250] pausing backend
+2021-07-10 16:20:33,595 INFO    MainThread:80839 [jupyter.py:save_ipynb():287] looking for notebook: Public/MountainCarProblem/1_offline_tabular.ipynb
+2021-07-10 16:20:33,600 INFO    MainThread:80839 [wandb_init.py:_resume_backend():259] resuming backend
+2021-07-10 16:20:33,616 INFO    MainThread:80839 [wandb_init.py:_pause_backend():250] pausing backend
+2021-07-10 16:20:33,616 INFO    MainThread:80839 [jupyter.py:save_ipynb():287] looking for notebook: Public/MountainCarProblem/1_offline_tabular.ipynb
+2021-07-10 16:20:33,621 INFO    MainThread:80839 [wandb_init.py:_resume_backend():259] resuming backend
+2021-07-10 16:20:33,644 INFO    MainThread:80839 [wandb_init.py:_pause_backend():250] pausing backend
+2021-07-10 16:20:33,645 INFO    MainThread:80839 [jupyter.py:save_ipynb():287] looking for notebook: Public/MountainCarProblem/1_offline_tabular.ipynb
+2021-07-10 16:20:33,661 INFO    MainThread:80839 [wandb_init.py:_resume_backend():259] resuming backend
+2021-07-10 16:20:33,678 INFO    MainThread:80839 [wandb_init.py:_pause_backend():250] pausing backend
+2021-07-10 16:20:33,678 INFO    MainThread:80839 [jupyter.py:save_ipynb():287] looking for notebook: Public/MountainCarProblem/1_offline_tabular.ipynb
+2021-07-10 16:20:33,734 INFO    MainThread:80839 [wandb_init.py:_resume_backend():259] resuming backend
+2021-07-10 16:20:33,755 INFO    MainThread:80839 [wandb_init.py:_pause_backend():250] pausing backend
+2021-07-10 16:20:33,755 INFO    MainThread:80839 [jupyter.py:save_ipynb():287] looking for notebook: Public/MountainCarProblem/1_offline_tabular.ipynb
+2021-07-10 16:20:33,765 INFO    MainThread:80839 [wandb_init.py:_resume_backend():259] resuming backend
+2021-07-10 16:20:33,776 INFO    MainThread:80839 [wandb_init.py:_pause_backend():250] pausing backend
+2021-07-10 16:20:33,776 INFO    MainThread:80839 [jupyter.py:save_ipynb():287] looking for notebook: Public/MountainCarProblem/1_offline_tabular.ipynb
+2021-07-10 16:20:33,788 INFO    MainThread:80839 [wandb_init.py:_resume_backend():259] resuming backend
+2021-07-10 16:20:33,809 INFO    MainThread:80839 [wandb_init.py:_pause_backend():250] pausing backend
+2021-07-10 16:20:33,810 INFO    MainThread:80839 [jupyter.py:save_ipynb():287] looking for notebook: Public/MountainCarProblem/1_offline_tabular.ipynb
+2021-07-10 16:25:39,312 INFO    MainThread:80839 [wandb_init.py:_resume_backend():259] resuming backend
+2021-07-10 16:25:39,366 INFO    MainThread:80839 [wandb_init.py:_pause_backend():250] pausing backend
+2021-07-10 16:25:39,366 INFO    MainThread:80839 [jupyter.py:save_ipynb():287] looking for notebook: Public/MountainCarProblem/1_offline_tabular.ipynb
+2021-07-10 17:26:45,912 INFO    MainThread:80839 [wandb_init.py:_resume_backend():259] resuming backend
+2021-07-10 17:26:45,914 INFO    MainThread:80839 [wandb_init.py:_pause_backend():250] pausing backend
+2021-07-10 17:26:45,914 INFO    MainThread:80839 [jupyter.py:save_ipynb():287] looking for notebook: Public/MountainCarProblem/1_offline_tabular.ipynb
+2021-07-10 17:26:46,022 INFO    MainThread:80839 [wandb_init.py:_resume_backend():259] resuming backend
+2021-07-10 17:26:46,037 INFO    MainThread:80839 [wandb_init.py:_pause_backend():250] pausing backend
+2021-07-10 17:26:46,037 INFO    MainThread:80839 [jupyter.py:save_ipynb():287] looking for notebook: Public/MountainCarProblem/1_offline_tabular.ipynb
+2021-07-10 18:45:49,218 INFO    MainThread:80839 [wandb_init.py:_resume_backend():259] resuming backend
+2021-07-10 18:45:49,281 INFO    MainThread:80839 [wandb_init.py:_pause_backend():250] pausing backend
+2021-07-10 18:45:49,281 INFO    MainThread:80839 [jupyter.py:save_ipynb():287] looking for notebook: Public/MountainCarProblem/1_offline_tabular.ipynb
+2021-07-10 18:45:51,812 INFO    MainThread:80839 [wandb_run.py:_atexit_cleanup():1593] got exitcode: 0
+2021-07-10 18:45:51,813 INFO    MainThread:80839 [wandb_run.py:_restore():1565] restore
+2021-07-10 18:45:52,015 INFO    MainThread:80839 [wandb_run.py:_wait_for_finish():1715] got exit ret: file_counts {
+  wandb_count: 1
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 45539
+  total_bytes: 45539
+}
+
+2021-07-10 18:45:52,326 INFO    MainThread:80839 [wandb_run.py:_wait_for_finish():1715] got exit ret: file_counts {
+  wandb_count: 1
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 45539
+  total_bytes: 45539
+}
+
+2021-07-10 18:45:53,266 INFO    MainThread:80839 [wandb_run.py:_wait_for_finish():1715] got exit ret: file_counts {
+  wandb_count: 4
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 45539
+  total_bytes: 52765
+}
+
+2021-07-10 18:45:53,370 INFO    MainThread:80839 [wandb_run.py:_wait_for_finish():1715] got exit ret: file_counts {
+  wandb_count: 5
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 603
+  total_bytes: 52944
+}
+
+2021-07-10 18:45:53,491 INFO    MainThread:80839 [wandb_run.py:_wait_for_finish():1715] got exit ret: file_counts {
+  wandb_count: 5
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 603
+  total_bytes: 52944
+}
+
+2021-07-10 18:45:53,594 INFO    MainThread:80839 [wandb_run.py:_wait_for_finish():1715] got exit ret: file_counts {
+  wandb_count: 5
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 7829
+  total_bytes: 52944
+}
+
+2021-07-10 18:45:53,697 INFO    MainThread:80839 [wandb_run.py:_wait_for_finish():1715] got exit ret: file_counts {
+  wandb_count: 5
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 52944
+  total_bytes: 52944
+}
+
+2021-07-10 18:45:53,802 INFO    MainThread:80839 [wandb_run.py:_wait_for_finish():1715] got exit ret: file_counts {
+  wandb_count: 5
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 52944
+  total_bytes: 52944
+}
+
+2021-07-10 18:45:53,904 INFO    MainThread:80839 [wandb_run.py:_wait_for_finish():1715] got exit ret: file_counts {
+  wandb_count: 5
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 52944
+  total_bytes: 52944
+}
+
+2021-07-10 18:45:54,006 INFO    MainThread:80839 [wandb_run.py:_wait_for_finish():1715] got exit ret: file_counts {
+  wandb_count: 5
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 52944
+  total_bytes: 52944
+}
+
+2021-07-10 18:45:54,113 INFO    MainThread:80839 [wandb_run.py:_wait_for_finish():1715] got exit ret: file_counts {
+  wandb_count: 5
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 52944
+  total_bytes: 52944
+}
+
+2021-07-10 18:45:54,539 INFO    MainThread:80839 [wandb_run.py:_wait_for_finish():1715] got exit ret: file_counts {
+  wandb_count: 5
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 52944
+  total_bytes: 52944
+}
+
+2021-07-10 18:45:54,648 INFO    MainThread:80839 [wandb_run.py:_wait_for_finish():1715] got exit ret: done: true
+exit_result {
+}
+file_counts {
+  wandb_count: 5
+  other_count: 2
+}
+pusher_stats {
+  uploaded_bytes: 52944
+  total_bytes: 52944
+}
+
+2021-07-10 18:45:56,038 INFO    MainThread:80839 [wandb_run.py:_show_summary():1870] rendering summary
+2021-07-10 18:45:56,040 INFO    MainThread:80839 [wandb_run.py:_show_history():1908] rendering history
+2021-07-10 18:45:56,043 INFO    MainThread:80839 [wandb_run.py:_show_files():1937] logging synced files

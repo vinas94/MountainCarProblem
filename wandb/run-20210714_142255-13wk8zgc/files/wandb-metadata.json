@@ -1,0 +1,19 @@
+{
+    "os": "Linux-5.4.0-77-generic-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2021-07-14T13:22:57.988233",
+    "startedAt": "2021-07-14T13:22:55.602973",
+    "docker": null,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [
+        "-f",
+        "/home/vinas/.local/share/jupyter/runtime/kernel-366e1b88-0b01-4ab5-b668-f6c8e815082f.json"
+    ],
+    "state": "running",
+    "program": "Public/MountainCarProblem/4_plotting.ipynb",
+    "root": "/home/vinas/Documents/GitHub",
+    "host": "zenbook-deluxe",
+    "username": "vinas",
+    "executable": "/usr/bin/python3"
+}

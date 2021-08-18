@@ -1,0 +1,19 @@
+{
+    "os": "Linux-5.4.0-77-generic-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2021-07-11T14:25:18.088202",
+    "startedAt": "2021-07-11T14:25:15.618985",
+    "docker": null,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [
+        "-f",
+        "/home/vinas/.local/share/jupyter/runtime/kernel-ec9c6cf0-564a-4881-b5ae-b01b1ad17281.json"
+    ],
+    "state": "running",
+    "program": "Public/MountainCarProblem/3_online_ql_sarsa.ipynb",
+    "root": "/home/vinas/Documents/GitHub",
+    "host": "zenbook-deluxe",
+    "username": "vinas",
+    "executable": "/usr/bin/python3"
+}
