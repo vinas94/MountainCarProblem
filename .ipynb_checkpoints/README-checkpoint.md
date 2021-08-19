@@ -75,7 +75,7 @@ happens according to the first line if the agent completed the task, or using th
 
 The only difference to the algorithm for Q-Learning is that the quality function of state <img src="https://render.githubusercontent.com/render/math?math=S'"> is always maximised. More specifically, <img src="https://render.githubusercontent.com/render/math?math=Q(S',A',w)"> turns into <img src="https://render.githubusercontent.com/render/math?math=max_aQ(S',a,w)"> regardless of what action was actually chosen under the policy.
 
-Both online learning algorithms were run for 5000 episodes with steps till completion recorded. The number of RBFs was set at 1000. The Q-Learning agent started off by very quickly learning the environment as the steps till completion dropped to around 250 just 100 episodes in before stabilising around 144. SARSA agent performed much worse at first, before stabilising at 170 - a reasonably good result, though still significantly higher than of Q-Learning. For comparison, the offline RBF agent reached similar values to Q-Learning - 154 steps.
+Both online learning algorithms were run for 5000 episodes with steps till completion recorded. The number of RBFs was set at 100. The Q-Learning agent started off by very quickly learning the environment as the steps till completion dropped to around 250 just 100 episodes in before stabilising around 144. SARSA agent performed much worse at first, before stabilising at 170 - a reasonably good result, though still significantly higher than of Q-Learning. For comparison, the offline RBF agent reached similar values to Q-Learning - 154 steps.
 
 <figure>
   <img src="./Plots/sarsa_ql.png" alt="fig3"/>
