@@ -26,7 +26,9 @@ The agent needs to learn the State-Action value function in order to make approp
 
 A tabular method's approach is to approximate the continuous State-Action space by a discretised table. Each of the state's axis (position and velocity) are uniformly split into 40 sections. Then a 40x40x3 tensor of a discretised State-Action space is created. Each element in this tensor represents the value of a given State-Action combination. This tensor is initially populated with zeros, meaning that the agent is not aware of its environment and has equal preferences for all states and actions. The agent is then initiated under an <img src="https://render.githubusercontent.com/render/math?math=\epsilon">-greedy policy where it takes a random action with a small probability <img src="https://render.githubusercontent.com/render/math?math=\epsilon"> and otherwise takes whatever action is of the highest value for the current state. The agent then moves around the states updating the discretised State-Action values at every step using the following formula:
 
+<div align="center">
 <a href="https://www.codecogs.com/eqnedit.php?latex=Q(S,A)&space;\leftarrow&space;Q(S,A)&space;&plus;&space;\alpha[R&space;&plus;&space;\gamma&space;max_aQ(S',a)&space;-&space;Q(S,A)]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Q(S,A)&space;\leftarrow&space;Q(S,A)&space;&plus;&space;\alpha[R&space;&plus;&space;\gamma&space;max_aQ(S',a)&space;-&space;Q(S,A)]" title="Q(S,A) \leftarrow Q(S,A) + \alpha[R + \gamma max_aQ(S',a) - Q(S,A)]" /></a>
+</div>
 
 where Q is the State-Action quality function, <img src="https://render.githubusercontent.com/render/math?math=\alpha"> is the learning rate, <img src="https://render.githubusercontent.com/render/math?math=\gamma"> is the discounting constant, and the letters S, A, R represent the state, action and reward respectively. Complete algorithm is in the [RL book by Sutton & Barto](http://incompleteideas.net/book/RLbook2020.pdf).
 
@@ -67,7 +69,9 @@ The  RBF method explored earlier is applied offline. The Agent first explored th
 For the SARSA algorithm, the weight update logic is shown below. At every step, the weight update
 happens according to the first line if the agent completed the task, or using the second one otherwise.
 
+<div align="center">
 <a href="https://www.codecogs.com/eqnedit.php?latex=\mbox{if&space;done&space;}\textbf{w}\leftarrow\textbf{w}&plus;\alpha(R-Q(S,A,\textbf{w}))\nabla&space;Q(S,A,\textbf{w})\\&space;{\color{White}..........}\,\mbox{else&space;}\textbf{w}\leftarrow\textbf{w}&plus;\alpha(R&plus;\gamma&space;Q(S',A',\textbf{w})-Q(S,A,\textbf{w}))\nabla&space;Q(S,A,\textbf{w})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mbox{if&space;done&space;}\textbf{w}\leftarrow\textbf{w}&plus;\alpha(R-Q(S,A,\textbf{w}))\nabla&space;Q(S,A,\textbf{w})\\&space;{\color{White}..........}\,\mbox{else&space;}\textbf{w}\leftarrow\textbf{w}&plus;\alpha(R&plus;\gamma&space;Q(S',A',\textbf{w})-Q(S,A,\textbf{w}))\nabla&space;Q(S,A,\textbf{w})" title="\mbox{if done }\textbf{w}\leftarrow\textbf{w}+\alpha(R-Q(S,A,\textbf{w}))\nabla Q(S,A,\textbf{w})\\ {\color{White}..........}\,\mbox{else }\textbf{w}\leftarrow\textbf{w}+\alpha(R+\gamma Q(S',A',\textbf{w})-Q(S,A,\textbf{w}))\nabla Q(S,A,\textbf{w})" /></a>
+</div>
 
 The only difference to the algorithm for Q-Learning is that the quality function of state <img src="https://render.githubusercontent.com/render/math?math=S'"> is always maximised. More specifically, <img src="https://render.githubusercontent.com/render/math?math=Q(S',A',w)"> turns into <img src="https://render.githubusercontent.com/render/math?math=max_aQ(S',a,w)"> regardless of what action was actually chosen under the policy.
 
