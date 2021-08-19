@@ -5,7 +5,6 @@ A challenge from the [OpenAI Gym](https://gym.openai.com/envs/MountainCar-v0/) <
 
 <img src='mountaincar.gif'>
 
-
 ## Background
 
 The challenge is for the car to drive up the mountain from a starting position in the middle of the valley. The difficulty is that the car's engine is not powerful enough to drive straight up the mountain. Instead, the car needs to reverse back to gather the momentum before going up the hill full speed. In this project several different AI learning techniques will be applied which will help the agent learn on its own how to complete the task.
@@ -63,7 +62,7 @@ Here the RBF methods do not actually learn anything, their performance is consis
 
 ### 3. SARSA + Q-Learning
 
-The RBF method explored earlier is applied offline. The Agent first explored the environment to collect the data about the states and only then RBFs were fitted which approximated the State-Action values. Instead, some online learning methods such as SARSA and Q-Learning can be used which learn the weights of the RBF model iteratively, one step at a time. These models share some similarities with the Tabular approach. The agent continues to follow $/epsilon$-greedy policy. However, this time, Action-State values are not read off a table but instead approximated using RBF regression. Furthermore, as there is no quality table, learning happens through updates to the RBF weights directly.
+The  RBF method explored earlier is applied offline. The Agent first explored the environment to collect the data about the states and only then RBFs were fitted which approximated the State-Action values. Instead, some online learning methods such as SARSA and Q-Learning can be used which learn the weights of the RBF model iteratively, one step at a time. These models share some similarities with the Tabular approach. The agent continues to follow <img src="https://render.githubusercontent.com/render/math?math=\epsilon">-greedy policy. However, this time, Action-State values are not read off a table but instead approximated using RBF regression. Furthermore, as there is no quality table, learning happens through updates to the RBF weights directly.
 
 For the SARSA algorithm, the weight update logic is shown below. At every step, the weight update
 happens according to the first line if the agent completed the task, or using the second one otherwise.

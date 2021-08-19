@@ -5,7 +5,6 @@ A challenge from the [OpenAI Gym](https://gym.openai.com/envs/MountainCar-v0/) <
 
 <img src='mountaincar.gif'>
 
-
 ## Background
 
 The challenge is for the car to drive up the mountain from a starting position in the middle of the valley. The difficulty is that the car's engine is not powerful enough to drive straight up the mountain. Instead, the car needs to reverse back to gather the momentum before going up the hill full speed. In this project several different AI learning techniques will be applied which will help the agent learn on its own how to complete the task.
@@ -27,7 +26,7 @@ The agent needs to learn the State-Action value function in order to make approp
 
 A tabular method's approach is to approximate the continuous State-Action space by a discretised table. Each of the state's axis (position and velocity) are uniformly split into 40 sections. Then a 40x40x3 tensor of a discretised State-Action space is created. Each element in this tensor represents the value of a given State-Action combination. This tensor is initially populated with zeros, meaning that the agent is not aware of its environment and has equal preferences for all states and actions. The agent is then initiated under an $\epsilon$-greedy policy where it takes a random action with a small probability $\epsilon$ and otherwise takes whatever action is of the highest value for the current state. The agent then moves around the states updating the discretised State-Action values at every step using the following formula:
 
-$$Q(S,A) \leftarrow Q(S,A) + \alpha[R + \gamma max_aQ(S',a) - Q(S,A)]$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=Q(S,A)&space;\leftarrow&space;Q(S,A)&space;&plus;&space;\alpha[R&space;&plus;&space;\gamma&space;max_aQ(S',a)&space;-&space;Q(S,A)]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Q(S,A)&space;\leftarrow&space;Q(S,A)&space;&plus;&space;\alpha[R&space;&plus;&space;\gamma&space;max_aQ(S',a)&space;-&space;Q(S,A)]" title="Q(S,A) \leftarrow Q(S,A) + \alpha[R + \gamma max_aQ(S',a) - Q(S,A)]" /></a>
 
 where Q is the State-Action quality function, $\alpha$ is the learning rate, $\gamma$ is the discounting constant, and the letters S, A, R represent the state, action and reward respectively. Complete algorithm is in the [RL book by Sutton & Barto](http://incompleteideas.net/book/RLbook2020.pdf).
 
@@ -63,17 +62,12 @@ Here the RBF methods do not actually learn anything, their performance is consis
 
 ### 3. SARSA + Q-Learning
 
-The RBF method explored earlier is applied offline. The Agent first explored the environment to collect the data about the states and only then RBFs were fitted which approximated the State-Action values. Instead, some online learning methods such as SARSA and Q-Learning can be used which learn the weights of the RBF model iteratively, one step at a time. These models share some similarities with the Tabular approach. The agent continues to follow $/epsilon$-greedy policy. However, this time, Action-State values are not read off a table but instead approximated using RBF regression. Furthermore, as there is no quality table, learning happens through updates to the RBF weights directly.
+The  RBF method explored earlier is applied offline. The Agent first explored the environment to collect the data about the states and only then RBFs were fitted which approximated the State-Action values. Instead, some online learning methods such as SARSA and Q-Learning can be used which learn the weights of the RBF model iteratively, one step at a time. These models share some similarities with the Tabular approach. The agent continues to follow <img src="https://render.githubusercontent.com/render/math?math=\epsilon">-greedy policy. However, this time, Action-State values are not read off a table but instead approximated using RBF regression. Furthermore, as there is no quality table, learning happens through updates to the RBF weights directly.
 
 For the SARSA algorithm, the weight update logic is shown below. At every step, the weight update
 happens according to the first line if the agent completed the task, or using the second one otherwise.
 
-\begin{equation}
-\begin{split}
-\mbox{if done }\textbf{w}&\leftarrow\textbf{w}+\alpha(R-Q(S,A,\textbf{w}))\nabla Q(S,A,\textbf{w})\\
-\mbox{else }\textbf{w}&\leftarrow\textbf{w}+\alpha(R+\gamma Q(S',A',\textbf{w})-Q(S,A,\textbf{w}))\nabla Q(S,A,\textbf{w})
-\end{split}
-\end{equation}
+<a href="https://www.codecogs.com/eqnedit.php?latex=\mbox{if&space;done&space;}\textbf{w}\leftarrow\textbf{w}&plus;\alpha(R-Q(S,A,\textbf{w}))\nabla&space;Q(S,A,\textbf{w})\\&space;{\color{White}..........}\,\mbox{else&space;}\textbf{w}\leftarrow\textbf{w}&plus;\alpha(R&plus;\gamma&space;Q(S',A',\textbf{w})-Q(S,A,\textbf{w}))\nabla&space;Q(S,A,\textbf{w})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mbox{if&space;done&space;}\textbf{w}\leftarrow\textbf{w}&plus;\alpha(R-Q(S,A,\textbf{w}))\nabla&space;Q(S,A,\textbf{w})\\&space;{\color{White}..........}\,\mbox{else&space;}\textbf{w}\leftarrow\textbf{w}&plus;\alpha(R&plus;\gamma&space;Q(S',A',\textbf{w})-Q(S,A,\textbf{w}))\nabla&space;Q(S,A,\textbf{w})" title="\mbox{if done }\textbf{w}\leftarrow\textbf{w}+\alpha(R-Q(S,A,\textbf{w}))\nabla Q(S,A,\textbf{w})\\ {\color{White}..........}\,\mbox{else }\textbf{w}\leftarrow\textbf{w}+\alpha(R+\gamma Q(S',A',\textbf{w})-Q(S,A,\textbf{w}))\nabla Q(S,A,\textbf{w})" /></a>
 
 The only difference to the algorithm for Q-Learning is that the quality function of state $S'$ is always maximised. More specifically, $Q(S',A',w)$ turns into $max_aQ(S',a,w)$ regardless of what action was actually chosen under the policy.
 
