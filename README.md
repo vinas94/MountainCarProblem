@@ -7,7 +7,7 @@ A challenge from the [OpenAI Gym](https://gym.openai.com/envs/MountainCar-v0/) <
 
 ## Background
 
-The challenge is for the car to drive up the mountain from a starting position in the middle of the valley. The difficulty is that the car's engine is not powerful enough to drive straight up the mountain. Instead, the car needs to reverse back to gather the momentum before going up the hill full speed. In this project several different AI learning techniques will be applied which will help the agent learn on its own how to complete the task.
+The challenge is for the car to drive up the mountain from a starting position in the middle of the valley. The difficulty is that the car's engine is not powerful enough to drive straight up the mountain. Instead, the car needs to reverse back to gather the momentum before going up the hill full speed. In this project, several different AI learning techniques will be applied which will help the agent learn on its own how to complete the task.
 
 The project is split into 4 core notebooks, the first three explore different approaches in solving the problem. The fourth one summarises the findings.
 
@@ -17,9 +17,9 @@ Learning artefacts and parameters are stored in [wandb](https://wandb.ai/vinas/M
 
 ## Implementation
 
-This problem has a finite state and action space. The states are defined by a tuple of car's position and velocity. Position ranges from -1.2 to 0.6, while velocity ranges from -0.07 to 0.07. At every state the agent can choose one of three possible actions: accelerate left (reverse), do nothing, accelerate right.
+This problem has a finite state and action space. The states are defined by a tuple of the car's position and velocity. Position ranges from -1.2 to 0.6, while velocity ranges from -0.07 to 0.07. At every state the agent can choose one of three possible actions: accelerate left (reverse), do nothing, accelerate right.
 
-The agent needs to learn the State-Action value function in order to make appropriate decisions which will lead the car to the top of the mountain.
+The agent needs to learn the State-Action value function in order to make appropriate decisions that will lead the car to the top of the mountain.
 
 
 ### 1. Tabular method
@@ -30,16 +30,16 @@ A tabular method's approach is to approximate the continuous State-Action space 
 <a href="https://www.codecogs.com/eqnedit.php?latex=Q(S,A)&space;\leftarrow&space;Q(S,A)&space;&plus;&space;\alpha[R&space;&plus;&space;\gamma&space;max_aQ(S',a)&space;-&space;Q(S,A)]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Q(S,A)&space;\leftarrow&space;Q(S,A)&space;&plus;&space;\alpha[R&space;&plus;&space;\gamma&space;max_aQ(S',a)&space;-&space;Q(S,A)]" title="Q(S,A) \leftarrow Q(S,A) + \alpha[R + \gamma max_aQ(S',a) - Q(S,A)]" /></a>
 </div>
 
-where Q is the State-Action quality function, <img src="https://render.githubusercontent.com/render/math?math=\alpha"> is the learning rate, <img src="https://render.githubusercontent.com/render/math?math=\gamma"> is the discounting constant, and the letters S, A, R represent the state, action and reward respectively. Complete algorithm is in the [RL book by Sutton & Barto](http://incompleteideas.net/book/RLbook2020.pdf).
+where Q is the State-Action quality function, <img src="https://render.githubusercontent.com/render/math?math=\alpha"> is the learning rate, <img src="https://render.githubusercontent.com/render/math?math=\gamma"> is the discounting constant, and the letters S, A, R represent the state, action and reward respectively. The complete algorithm is in the [RL book by Sutton & Barto](http://incompleteideas.net/book/RLbook2020.pdf).
 
-This algorithm runs for multiple episodes. The first few episodes it takes the agent several thousand steps in order to complete the task. By the 1000th episode, however, agent manages to drive up the mountain within 300 steps. By the final episode it gets close to 200 steps.
+This algorithm runs for multiple episodes. In the first few episodes, it takes the agent several thousand steps in order to complete the task. By the 1000th episode, however, the agent manages to drive up the mountain within 300 steps. By the final episode, it gets close to 200 steps.
 
-The weakness of this approach is that it is rather slow to learn (especially in the beginning) and that it only assigns values to those State-Actions that the agent has visited. Thus if the state space was slightly expanded, agent wouldn't know how to act there. Furthermore, it requires discretisation of the State-Action space at every step which means that technically only very few State-Action combinations have been evaluated out of infinite possibilities. 
+The weakness of this approach is that it is rather slow to learn (especially in the beginning) and that it only assigns values to those State-Actions that the agent has visited. Thus if the state space was slightly expanded, the agent wouldn't know how to act there. Furthermore, it requires discretisation of the State-Action space at every step which means that technically only very few State-Action combinations have been evaluated out of infinite possibilities. 
 
 
 ### 2. RBF approximation
 
-The last two aforementioned issues with the tabular method regarding a limited and discretised State-Action space can be solved by approximating the whole value function. This can be done by transforming the State-Action value table using a number of Radial Basis Functions (RBFs) and then approximating it via linear regression. In this setting the RBF transformed State-Action pairs would make up the design matrix while the corresponding values would be the regression targets. Figure 1 displays a scatter plot of true (acquired though the tabular method) and predicted (from RBF regression) values.
+The last two aforementioned issues with the tabular method regarding a limited and discretised State-Action space can be solved by approximating the whole value function. This can be done by transforming the State-Action value table using a number of Radial Basis Functions (RBFs) and then approximating it via linear regression. In this setting, the RBF transformed State-Action pairs would make up the design matrix while the corresponding values would be the regression targets. Figure 1 displays a scatter plot of true (acquired through the tabular method) and predicted (from RBF regression) values.
 
 <figure>
   <img src="./Plots/rbf_regression.png" alt="fig1"/>
@@ -48,7 +48,7 @@ The last two aforementioned issues with the tabular method regarding a limited a
 <br>
 <br>
 
-Using this method, no learning takes place. State-Action values are acquired though a linear combination of RBF transformed state-action combination and a set of weights which were acquired though fitting a linear regression model based on the learning from the tabular method.
+Using this method, no learning takes place. State-Action values are acquired through a linear combination of RBF transformed state-action combination and a set of weights which were acquired through fitting a linear regression model based on the learning from the tabular method.
 
 With a carefully chosen number of RBFs, this approach can outperform the tabular method as can be seen in Figure 2.
 
@@ -92,4 +92,4 @@ Both online learning algorithms were run for 5000 episodes with steps till compl
 <br>
 <br>
 
-The methods applied in this report approximate state values for every possible action. These approximations can be used to create state space quality surfaces. Some of these surfaces are displayed in Figure 4. Interestingly, all of the shapes are rather distinct, yet have some key common features. For the Tabular method, there is a valley in the center with heights around 0.5 position and high velocity. Some of the state values around the borders of the surface are missing - the agent never explored there. Offline RBF approximation looks very similar, yet it has values assigned for the unvisited states. The Q-Learning quality surface is completely different though. It is very smooth, with heights around high velocity.
+The methods applied in this report approximate state values for every possible action. These approximations can be used to create state space quality surfaces. Some of these surfaces are displayed in Figure 4. Interestingly, all of the shapes are rather distinct, yet have some key common features. For the Tabular method, there is a valley in the centre with heights around 0.5 position and high velocity. Some of the state values around the borders of the surface are missing - the agent never explored there. The offline RBF approximation looks very similar, yet it has values assigned for the unvisited states. The Q-Learning quality surface is completely different though. It is very smooth, with heights around high velocity.
